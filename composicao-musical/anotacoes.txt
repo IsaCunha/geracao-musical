@@ -1,4 +1,0 @@
-
-https://www.researchgate.net/publication/287009971_A_fitness_function_for_computer-generated_music_using_genetic_algorithms
-
-https://colab.research.google.com/github/craffel/pretty-midi/blob/main/Tutorial.ipynb#scrollTo=yLyza4PJ9Iug
