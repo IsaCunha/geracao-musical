@@ -42,17 +42,17 @@ def calcular_fitness(genotipo_gerado, lista_de_guias):
             # Melodias infantis e natalinas raramente saltam mais que 7 semitons
             if distancia > 3:
                 # Quanto maior o salto, maior a penalidade
-                penalidade_saltos += (distancia * 0.1)
+                penalidade_saltos += (distancia * 0.08)
 
     # Conta o total de pausas na melodia gerada
     total_silencios = genotipo_gerado.count(0)
     
     # Restrição rígida: máximo de 5 silêncios
     if total_silencios > 7:
-        excesso = total_silencios - 5
+        excesso = total_silencios - 7
         # Multiplicador alto (ex: 3.0) garante que a nota despenque
         # Um indivíduo com 8 silêncios tomaria 9.0 de penalidade, sendo eliminado no torneio
-        penalidade_saltos += (excesso * 3.0)
+        penalidade_saltos += (excesso * 1.0)
         
     # Retorna o inverso da soma para que o maior valor seja o melhor fitness
     # Somamos um valor bem pequeno (1e-6) para evitar divisão por zero

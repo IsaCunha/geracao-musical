@@ -1,3 +1,4 @@
+import os
 import random
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,7 +9,7 @@ from newMIDI import exportar_para_midi
 
 def main():
     pop = toolbox.population(n=50)
-    CXPB, MUTPB, MUTPB_SILENCE, NGEN = 0.2, 0.2, 0, 2000
+    CXPB, MUTPB, MUTPB_SILENCE, NGEN = 0.2, 0.2, 0.1, 500
 
     # Configuração da captura de estatísticas
     stats = tools.Statistics(key=lambda ind: ind.fitness.values)
@@ -32,11 +33,11 @@ def main():
     for g in range(1, NGEN + 1):
 
         # Encontra e clona o melhor indivíduo da geração atual (O Elite)
-        elite = tools.selBest(pop, 1)
+        elite = tools.selBest(pop, 5)
         elite = list(map(toolbox.clone, elite))
 
         # Seleciona, clona e aplica cruzamento/mutação
-        offspring = toolbox.select(pop, len(pop)-1)
+        offspring = toolbox.select(pop, len(pop)-5)
         offspring = list(map(toolbox.clone, offspring))
 
         for child1, child2 in zip(offspring[::2], offspring[1::2]):
@@ -100,13 +101,31 @@ def main():
 
     ax.legend(loc="lower right")
     plt.grid(True)
+    
+    # Procura o próximo número disponível para o gráfico
+    contador = 1
+    nome_grafico = f"grafico_evolucao{contador}.png"
+    
+    while os.path.exists(nome_grafico):
+        contador += 1
+        nome_grafico = f"grafico_evolucao{contador}.png"
+        
+    # Salva o gráfico com o novo nome
+    plt.savefig(nome_grafico, dpi=300, bbox_inches='tight')
+    print(f"\nGráfico salvo como: {nome_grafico}")
+    
+    # Limpa a figura da memória para não sobrepor gráficos em execuções futuras
+    plt.close()
     plt.show()
 
     # Retorna a população final e o melhor indivíduo encontrado
     melhor_individuo = tools.selBest(pop, 1)[0]
-    return pop, melhor_individuo
+    return pop, melhor_individuo, contador
 
 if __name__ == "__main__":
-    populacao_final, melhor_array = main()
-    exportar_para_midi(melhor_array, "melodia_natal_piano.mid")
+    populacao_final, melhor_array, numero_teste = main()
+    
+    nome_midi = f"melodia_natal{numero_teste}.mid"
+    exportar_para_midi(melhor_array, nome_midi)
+    
     print("Melhor genótipo encontrado:", melhor_array)
