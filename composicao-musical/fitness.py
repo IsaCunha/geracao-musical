@@ -31,16 +31,17 @@ def calcular_fitness(genotipo_gerado, lista_de_guias):
         nota_atual = genotipo_gerado[i]
         nota_anterior = genotipo_gerado[i-1]
 
+
         # Punição severa para buracos de silêncio (0 seguidos)
-        if nota_atual == 0 and nota_anterior == 0:
+        if nota_anterior == 0 and (nota_atual == 0 or nota_atual == 1):
             penalidade_saltos += 2.0
             continue
         
         # Ignora os silêncios (0) no cálculo do salto
-        if nota_atual != 0 and nota_anterior != 0:
+        if nota_atual > 1 and nota_anterior > 1:
             distancia = abs(nota_atual - nota_anterior)
             # Melodias infantis e natalinas raramente saltam mais que 7 semitons
-            if distancia > 3:
+            if distancia > 7:
                 # Quanto maior o salto, maior a penalidade
                 penalidade_saltos += (distancia * 0.08)
 

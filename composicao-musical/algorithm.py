@@ -9,7 +9,7 @@ IND_SIZE = 128
 
 toolbox = base.Toolbox()
 
-ESCALA_MAIOR = [55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77, 79]
+ESCALA_MAIOR = [1, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77, 79]
 
 def gerar_nota():
     # as músicas guias selecionadas vão de 60 a 75,
