@@ -19,17 +19,17 @@ Os resultados (gráficos de evolução e arquivos de áudio .mid) serão salvos 
 
 O sistema foi desenhado de forma modular. Você pode alterar a sonoridade e o comportamento da evolução modificando as variáveis globais localizadas no topo de dois arquivos:
 
-    Em *main.py* (Hiperparâmetros do Algoritmo Genético):
-    Você pode controlar o tamanho da população (POP_SIZE), limite de gerações (NGEN), taxas de mutação de notas (MUTPB) e pausas (MUTPB_SILENCE), probabilidade de cruzamento (CXPB) e o tamanho do elitismo (ELITISM_SIZE).
+Em *main.py* (Hiperparâmetros do Algoritmo Genético):
+Você pode controlar o tamanho da população (POP_SIZE), limite de gerações (NGEN), taxas de mutação de notas (MUTPB) e pausas (MUTPB_SILENCE), probabilidade de cruzamento (CXPB) e o tamanho do elitismo (ELITISM_SIZE).
 
-    Em *newMIDI.py* (Síntese de Áudio):
-    Você pode alterar os timbres dos instrumentos (via PROGRAMA_PRINCIPAL e PROGRAMA_SECUNDARIO), o tempo base, e ajustar o efeito de cânone (atraso e volume do eco).
+Em *newMIDI.py* (Síntese de Áudio):
+Você pode alterar os timbres dos instrumentos (via PROGRAMA_PRINCIPAL e PROGRAMA_SECUNDARIO), o tempo base, e ajustar o efeito de cânone (atraso e volume do eco).
 
 ## Configurações das Músicas Geradas
 
 As três músicas exportadas como resultado deste trabalho utilizaram as seguintes combinações de hiperparâmetros, demonstrando a versatilidade do modelo:
 
-# Música 1 (Evolução Longa)
+### Música 1 (Evolução Longa)
 
     *Genético:* 
     População = 100, 
@@ -46,7 +46,7 @@ As três músicas exportadas como resultado deste trabalho utilizaram as seguint
     Eco = 60, 
     Tempo = 0.50s.
 
-# Música 2 (Base de Piano Rápida)
+### Música 2 (Base de Piano Rápida)
 
     *Genético:* 
     População = 50, 
@@ -63,7 +63,7 @@ As três músicas exportadas como resultado deste trabalho utilizaram as seguint
     Eco = 50, 
     Tempo = 0.50s.
 
-# Música 3 (Alta Variabilidade)
+### Música 3 (Alta Variabilidade)
 
     *Genético:*  
     População = 75, 
