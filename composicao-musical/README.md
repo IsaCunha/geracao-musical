@@ -29,41 +29,41 @@ Você pode alterar os timbres dos instrumentos (via PROGRAMA_PRINCIPAL e PROGRAM
 
 As três músicas exportadas como resultado deste trabalho utilizaram as seguintes combinações de hiperparâmetros, demonstrando a versatilidade do modelo:
 
-### Música 1 (Evolução Longa)
+### Música 1 
 
     *Genético:* 
     População = 100, 
-    Gerações = 2000, 
-    Cruzamento = 0.3, 
-    Mutação (Nota) = 0.1, 
+    Gerações = 500, 
+    Cruzamento = 0.2, 
+    Mutação (Nota) = 0.2, 
     Mutação (Pausa) = 0.1, 
     Elitismo = 5.
 
     *Áudio:*
     Principal = 9 (Celesta), 
     Fundo = 52 (Coral), 
-    Atraso = 1 tick, 
+    Atraso = 0 tick, 
     Eco = 60, 
     Tempo = 0.50s.
 
-### Música 2 (Base de Piano Rápida)
+### Música 2 
 
     *Genético:* 
     População = 50, 
-    Gerações = 300, 
-    Cruzamento = 0.2, 
+    Gerações = 500, 
+    Cruzamento = 0.4, 
     Mutação (Nota) = 0.2, 
-    Mutação (Pausa) = 0.1, 
-    Elitismo = 2.
+    Mutação (Pausa) = 0.2, 
+    Elitismo = 5.
 
     *Áudio:*
-    Principal = 0 (Piano), 
-    Fundo = 10 (Caixa de Música), 
+    Principal = 9 (Celesta), 
+    Fundo = 52 (Coral),
     Atraso = 1 tick, 
     Eco = 50, 
-    Tempo = 0.50s.
+    Tempo = 0.25s.
 
-### Música 3 (Alta Variabilidade)
+### Música 3 (exemplo usado no artigo)
 
     *Genético:*  
     População = 75, 
